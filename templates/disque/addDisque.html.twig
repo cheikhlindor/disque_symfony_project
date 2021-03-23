@@ -1,0 +1,32 @@
+{% extends 'layeout.html.twig' %}
+
+{% block title %}Enregistrer un disque{% endblock %}
+
+{% block main %}
+    <h3>Vous êtes entrain d'enregistrer un disque</h3>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+
+                {{ form_start(disqueForme) }}
+                {{ form_widget(disqueForme) }}
+                <br/>
+                <button type="submit">Enregistrer</button>
+                {{ form_end(disqueForme) }}
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+{% block javascripts %}
+    <script>
+        $(document).ready(function() {
+            // you may need to change this code if you are not using Bootstrap Datepicker
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+        });
+    </script>
+{% endblock javascripts %}

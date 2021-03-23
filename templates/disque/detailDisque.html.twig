@@ -1,0 +1,30 @@
+{% extends 'layeout.html.twig' %}
+
+{% block title %}
+    detail Disque
+{% endblock %}
+
+{% block main %}
+    <h2>Détail de la sortie</h2><br>
+
+    <div class="row">
+        <div class="col-md-4 mr-auto">
+            <p> <span>Nom de la sortie :</span>{{ disque.nom }}</p>
+            <p> <span>Nombre de Titres :</span>{{ disque.nombbreTitres }}</p>
+            <p> <span>Date De Sortie :</span>{{ disque.dateSorties |date("Y-m-d")}}</p>
+            <p> <span>Nom de l'éditeur :</span>{{ disque.editeur}}</p>
+
+        </div>
+        <div class="col-md-4">
+            <p> <span>Réalisateur :</span>{{ disque.realisateur.nom }}</p>
+            <p> <span>Description :</span>{{ disque.description }}</p>
+
+
+        </div>
+
+    </div>
+
+    <br>
+    <button><a href="{{ path('liste_disque') }}">Retour</a></button>
+{% endblock %}
+

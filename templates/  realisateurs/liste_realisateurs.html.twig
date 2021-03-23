@@ -1,0 +1,45 @@
+{% extends 'layeout.html.twig' %}
+
+{% block title %}
+    Les réalisateurd! | {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <h3>Liste des réalisateurs</h3>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Nom du réalisateur</th>
+            <th scope="col">Prenom du réalisateur</th>
+            <th scope="col">Ville</th>
+            <th scope="col">Code Postal</th>
+            <th scope="col">Pays</th>
+            <th scope="col">Action</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for realisateur in realisateurs %}
+            <tr>
+
+                <td>{{ realisateur.nom }}</td>
+
+                <td>{{ realisateur.prenom }}</td>
+                <td>{{ realisateur.ville}}</td>
+                <td>{{realisateur.codepostale }}</td>
+                <td>{{ realisateur.pays}}</td>
+
+                <td><a href="{{ path('realisateur_detail', {'id': realisateur.id})}}">Afficher</a></td>
+
+
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="navbar-brand" href="{{path('realisateur')}}">Ajouter un Realisateur</a>
+
+
+{% endblock %}
+

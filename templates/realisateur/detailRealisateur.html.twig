@@ -1,0 +1,29 @@
+{% extends 'layeout.html.twig' %}
+
+{% block title %}
+    Données Réalisateurs
+{% endblock %}
+
+{% block main %}
+    <h2>Les coordonnées du réalisateur</h2><br>
+
+    <div class="row">
+        <div class="col-md-4 mr-auto">
+            <p> <span>Nom  :</span>{{ realisateur.nom }}</p>
+            <p> <span>Prenom :</span>{{ realisateur.prenom }}</p>
+            <p> <span>Ville :</span>{{ realisateur.ville}}</p>
+
+        </div>
+        <div class="col-md-4">
+            <p> <span>Code Postal :</span>{{realisateur.codepostale }}</p>
+            <p> <span>Pays :</span>{{ realisateur.pays }}</p>
+
+
+        </div>
+
+    </div>
+
+    <br>
+    <button><a href="{{ path('liste_realisateur') }}">Retour</a></button>
+{% endblock %}
+

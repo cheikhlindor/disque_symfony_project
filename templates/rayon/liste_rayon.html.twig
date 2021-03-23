@@ -1,0 +1,40 @@
+{% extends 'layeout.html.twig' %}
+
+{% block title %}
+    Les Rayons! | {{ parent() }}
+{% endblock %}
+
+{% block main %}
+    <h3>Les disques sont classés par Type de musique et par année</h3>
+    <table class="table">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">type de disque</th>
+            <th scope="col">Année de création</th>
+            <th scope="col">Action</th>
+            <th scope="col"></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for rayon in rayons %}
+            <tr>
+
+                <td>{{ rayon.typeDisque }}</td>
+
+                <td>{{ rayon.anneeSortie }}</td>
+
+
+                <td><a href="">Afficher</a></td>
+
+
+
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="navbar-brand" href="{{path('disque')}}">Ajouter un disque</a>
+
+
+{% endblock %}
+
